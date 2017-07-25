@@ -1,0 +1,46 @@
+注:此js由小光进行修改优化
+
+官方git：https://github.com/amfe/lib-flexible
+官方文档：https://github.com/amfe/article/issues/17
+
+引入执行js之前，可以通过输出meta标签方式来手动设置dpr。语法如下：
+
+<meta name="flexible" content="initial-dpr=2,maximum-dpr=3" />  坑：官方文档和示例代码并不要求填写这个 
+不需要写 <meta name="viewport" content="" />
+
+字体的大小不推荐用rem作为单位。所以对于字体的设置，仍旧使用px作为单位，并配合用data-dpr属性来区分不同dpr下的的大小。
+
+例如：
+
+div {
+    width: 1rem; 
+    height: 0.4rem;
+    font-size: 12px; // 默认写上dpr为1的fontSize
+}
+
+[data-dpr="2"] div {
+    font-size: 24px;
+}
+
+[data-dpr="3"] div {
+    font-size: 36px;
+}
+
+//
+CSSREM是一个CSS的px值转rem值的Sublime Text3自动完成插件。这个插件是由@正霖编写。先来看看插件的效果：
+项目地址：https://github.com/flashlizi/cssrem
+项目文件见压缩包 20161125下载
+
+安装
+
+下载本项目，比如：git clone https://github.com/flashlizi/cssrem
+进入packages目录：Sublime Text -> Preferences -> Browse Packages...
+复制下载的cssrem目录到刚才的packges目录里。
+重启Sublime Text。
+配置参数
+
+参数配置文件：Sublime Text -> Preferences -> Package Settings -> cssrem
+
+px_to_rem - px转rem的单位比例，默认为40。
+max_rem_fraction_length - px转rem的小数部分的最大长度。默认为6。
+available_file_types - 启用此插件的文件类型。默认为：[".css", ".less", ".sass"]。

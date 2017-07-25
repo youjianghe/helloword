@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="flexible" content="initial-dpr=2,maximum-dpr=3" />
+	<meta name="format-detection"content="telephone=no, email=no" />
+	<title>会计部红包活动</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/flexible.fly.js"></script>
+	<script src="js/zepto.js"></script>
+	<script src="js/event.js"></script>
+	<script src="js/touch.js"></script>
+</head>
+<body>
+	<div class="wrap p1">
+		<div class="header">
+			<img src="img/logo.png" alt="仁和会计">
+		</div>
+		<div class="content">
+			<p class="mark-title"><img src="img/k1.png" alt=""></p>
+			<p class="subtitle"><span>仁和会计现金助您完成小目标</span></p>
+			<p class="detail"><img src="img/k2.png" alt=""></p>
+		</div>
+		<div class="footer">
+			<img src="img/k3.png" alt="" class="foot">
+			<img src="img/icon7.png" alt="" class="tapup updown">
+		</div>
+	</div>
+	<div class="wrap p2">
+		<div class="header">
+			<img src="img/logo.png" alt="仁和会计">
+		</div>
+		<div class="content">
+			<p class="mark-title clearfix">
+				<img src="img/k4.png" alt="" class="k4">
+				<img src="img/k5.png" alt="" class="k5">
+			</p>
+			<form action="" method="post">
+			<div class="submitinfo">
+				<label for="name"><span>姓名</span> <input type="text" id="name" name="name"></label>
+				<label for="mobile"><span>手机号</span> <input type="number" id="mobile" name="mobile"></label>
+				<label for="code"><span>验证码</span> <input type="number" id="code" name="code"><button type="button" id="sencode">发送验证码</button></label>
+			</div>
+			<button type="submit" id="submit"><span>立即领取</span></button>
+			</form>
+		</div>
+		<div class="footer">
+			仁和会计&nbsp;·&nbsp;您身边的财税管家
+		</div>
+	</div>
+
+<script>
+	(function($){
+		var winh = $(window).height();
+		$('.p2').hide();
+		$(".wrap").height(winh);
+		$('.wrap').swipeUp(function(){
+			$('.p2').show(); 
+			$('body').scrollTop(winh);
+
+		});
+	})(Zepto);
+
+</script>
+
+
+
+</body>
+</html>

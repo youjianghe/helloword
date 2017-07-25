@@ -1,0 +1,39 @@
+
+
+ /*首页*/
+ body.myhome{}
+ body.myhome .topinfo{height: 40px;line-height: 40px;border-bottom: 1px solid #dedede;}
+ body.myhome .topinfo ul.nav{}
+ body.myhome .topinfo ul.nav li{padding: 0 15px;cursor: pointer;}
+ body.myhome .topinfo ul.nav li.mnav{font-size: 16px;background-color: #0094ea;color: #fff;}
+ body.myhome .topinfo ul.nav li.mnav i{margin-right: 4px;}
+ body.myhome .logo{padding-top:15px;padding-bottom: 15px;}
+ body.myhome .wrap{position: relative;max-width:800px;margin: 0 auto;margin-top: 30px;}
+ body.myhome .wrap #classify{position: absolute;left: -150px;top: 0;width: 110px;background-color: #000000;border: none;}
+ body.myhome .wrap #classify li{float: none;width: 110px;margin: 0;}
+ body.myhome .wrap #classify li a{border: none;color: #efebeb;margin: 0; border-radius:0;text-align: center; font-family: Microsoft Yahei,SimSun,Helvetica;}
+ body.myhome .wrap #classify li a i{margin-right:2px; }
+ body.myhome .wrap #classify li.active a{background-color: #0094ea;}
+ body.myhome .wrap #classify li:hover a{background-color: #0094ea;}
+ body.myhome .wrap #classify.active{top:-130px;background-color: #000000;z-index: 300;-webkit-animation:movein .5s linear forwards;-moz-animation:movein .5s linear forwards;animation:movein .5s linear forwards;}
+ @-webkit-keyframes movein{
+	from{left:-150px; }
+	to{left: -15px;}
+ } 
+ @-moz-keyframes movein{
+	from{left:-150px; }
+	to{left: -15px;}
+ }
+ @keyframes movein{
+	from{left:-150px; }
+	to{left: -15px;}
+ }
+ body.myhome .wrap .tab-item{width: 100%;}
+ body.myhome .wrap .tab-item .tab-pane .item{width: 100%;margin-bottom: 15px; border: 1px solid #dedede;}
+ body.myhome .wrap .tab-item .tab-pane .item span.linkname{display: inline-block; height: 40px;line-height: 40px;padding: 0 15px;font-size: 16px;background-color: #dddddd;cursor: pointer;}
+ body.myhome .wrap .tab-item .tab-pane .item span.linkname:active{background-color: #c2c0c0;}
+ body.myhome .wrap .tab-item .tab-pane .item span.linkname i{margin-right: 2px;}
+ body.myhome .wrap .tab-item .tab-pane .item ul.link{margin: 15px;}
+ body.myhome .wrap .tab-item .tab-pane .item ul.link li{display: inline-block;}
+ body.myhome .wrap .tab-item .tab-pane .item ul.link li a{color: #333333;}
+ body.myhome .wrap .tab-item .tab-pane .item ul.link li:hover a{color: #ffffff;background-color: #333333;}

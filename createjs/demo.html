@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<title>canvas动画</title>
+	<script src="js/createjs-2015.11.26.min.js"></script>
+	<style>
+		body{margin: 0;padding: 0;box-sizing: border-box;}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" ></canvas>
+	<script>
+		var canvas,
+			stage,
+			w = window.innerWidth,
+			h = window.innerHeight;
+			function init(){
+				canvas = document.getElementById('canvas');
+				canvas.width = w;
+				canvas.height = h;
+				var stage = new createjs.Stage(canvas);
+				var text = new createjs.Text('这是一段文字','20px Microsoft Yahei','#ff7700');
+				var bounds = text.getBounds();
+				text.x = stage.canvas.width - bounds.width>>1;
+				text.y = 20;
+
+				console.log(text.getBounds());
+				var text1 = new createjs.Text('还是一段文字','20px Arial','#fd0017');
+					text1.textAlign = 'center';
+					text1.x = stage.canvas.width/2;
+					text1.y = 20;
+				stage.addChild(text1);
+				stage.addChild(text);
+				stage.update();
+
+			}
+			init();
+	</script>
+</body>
+</html>

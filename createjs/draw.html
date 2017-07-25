@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<title>canvas动画-画矩形</title>
+	<script src="js/createjs-2015.11.26.min.js"></script>
+	<style>
+		body{margin: 0;padding: 0;box-sizing: border-box;}
+	</style>
+</head>
+<body>
+		<canvas id="canvas"></canvas>
+		<script>
+			var canvas,
+				w=window.innerWidth,
+				h=window.innerHeight,
+				s;
+			function init(){
+				canvas = document.getElementById('canvas');
+				canvas.width = w;
+				canvas.height = h;
+				var stage = new createjs.Stage(canvas);
+				var container = new createjs.Container()
+				stage.addChild(container);
+				var graphics = new createjs.Graphics().beginFill("#ff0000").drawRect(0, 0, 100, 100);
+  				s = new createjs.Shape(graphics);
+
+    //加入场景
+    container.addChild(s);
+    stage.update();
+  				
+			}
+
+			//绘制矩形 类
+function DrawPillars() {
+    createjs.Shape.call(this);//继承Shap类
+    this.graphics.beginFill("#ff0000").drawRect(0, 0, 50, 50);
+    this.setBounds(0,0,50,50);//设置矩形的边界属性，这样可以获得width和height属性
+}
+DrawPillars.prototype = new createjs.Shape();//获得原型方法
+
+			init();
+		</script>
+</body>
+</html>
